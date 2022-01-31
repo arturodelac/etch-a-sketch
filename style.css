@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+
+box-sizing: border-box;
+font-family: "Open Sans";
+background-color: #ffffff ;
+}
+
+
+
+.ui {
+    display: flex;
+    justify-content: center;
+    gap:64px;
+    margin:0 auto;
+    margin-left: 128px;
+    margin-right: 128px;
+    flex:1;
+    margin-top: 128px;
+}
+.header {
+    background-color: #0277bd;
+    color: white;
+    margin: 0px;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 3em;
+
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    justify-content: center;
+    gap:32px;
+    max-width: fit-content;
+}
+
+button {
+  
+  padding: 8px;
+  padding-left: 32px;
+  padding-right: 32px;
+  background-color: #0277bd;
+  color: white;
+  font-weight: 600  ;
+  border-style: solid;
+  border-width: 0px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 16px 2px rgba(209, 209, 209, 0.73);
+  
+}
+
+button:hover {
+  background-color: #fdd835;
+  color: black;
+  transition: .08s;
+
+
+}
+
+.grid-container {
+
+    max-width: 600px;
+    height: 600px;
+    border: 0px;
+    border-style: solid;
+    border-color: black;
+    flex:1;
+    flex-wrap: wrap;
+    display: flex;
+    background-color: white;
+    box-shadow: 5px 5px 16px 2px rgba(209, 209, 209, 0.73);
+
+    
+    
+    
+}
+
+.color-picker {
+
+    max-width: 5%;
+    height: 300px;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    flex:1;
+}
+
+body{
+    margin:0px;
+}
+
+.slidecontainer {
+    display: flex;
+    margin-top: 16px;
+   
+    justify-content: center;
+    width: 100%;
+   
+  }
+  
+  /* The slider itself */
+  .slider {
+    
+    -webkit-appearance: none;
+    width: 10%;
+    height: 15px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; 
+  background: #fdd835;
+  cursor: pointer;
+    }
+    .slider::-moz-range-thumb {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #fdd835;
+        cursor: pointer;
+        border-style: solid;
+        border-width: 0px;
+      }
+
+      .slider-big-container{
+        display: flex;
+        flex-direction: column;
+      }
+
+      .slider-data{
+        text-align: center;
+    }
+    .grid{
+
+      border:0px;
+      border-style: solid;
+    }
+
+    .grid-transformed {
+      background-color: black;
+      transition: .06s;
+      
+
+    }
+
+    h2{
+      
+      margin:0;
+      margin-top: 48px;
+      font-weight: 200;
+      text-align: center;
+    }
