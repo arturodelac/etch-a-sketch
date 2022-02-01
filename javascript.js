@@ -1,12 +1,13 @@
 //selects the grid container
 const container = document.querySelector('.grid-container');
+container.setAttribute('style','grid-template-columns: repeat(16, 1fr);') ;
 
 //grids variables
 let gridSide = 16;
-let gridWidth = (600/gridSide);
-let noOfGrids = 16*16;
+let noOfGrids = gridSide*gridSide;
+
 gridCreator(noOfGrids);
-const allGrids = container.querySelectorAll('.grid');
+let allGrids = container.querySelectorAll('.grid');
 
 paintGrid();
 
@@ -17,11 +18,11 @@ function gridCreator(noOfGrids){
         const grid = document.createElement('div');
         grid.classList.add('grid');
         container.appendChild(grid);
-        grid.setAttribute('style','width:'+gridWidth+'px;height:'+gridWidth+'px;')
     }
 }
 //paints grid on mouseover event
 function paintGrid(){
+allGrids = container.querySelectorAll('.grid');
 allGrids.forEach((grids) => {grids.style.backgroundColor = 'white';grids.classList.remove('grid-transformed');grids.addEventListener('mouseover',()=> {grids.classList.add('grid-transformed');grids.style.backgroundColor = 'black'})});
 }
 
@@ -39,7 +40,7 @@ rainbowButton.addEventListener('click',()=> {rainbow()});
 
 //rainbow mode function
 function rainbow(){
-    allGrids.forEach((grids) => {grids.classList.remove('grid-transformed');grids.style.backgroundColor = 'white';grids.addEventListener('mouseover',()=> {grids.classList.add('grid-transformed');const rainbowColor = color();grids.style.backgroundColor = rainbowColor;})});   
+allGrids.forEach((grids) => {grids.classList.remove('grid-transformed');grids.style.backgroundColor = 'white';grids.addEventListener('mouseover',()=> {grids.classList.add('grid-transformed');const rainbowColor = color();grids.style.backgroundColor = rainbowColor;})});   
 }
 
 //eraser button
@@ -49,18 +50,45 @@ eraserButton.addEventListener('click',()=> {eraser()});
 
 //eraser function
 function eraser() {
-allGrids.forEach((grids) => {grids.addEventListener('mouseover',()=> {grids.style.backgroundColor = 'white'})});
+allGrids.forEach((grids) => {grids.addEventListener('mouseover',()=> {grids.classList.remove('grid-transformed');grids.style.backgroundColor = 'white'})});
 }
-
-
-
-
 
 //creates random color
 function color(){
     const availableColors = ["red","blue","yellow","green"] 
     selectedColor = availableColors[Math.floor(Math.random()*availableColors.length)];
     return selectedColor;}
+//enables slider 
+const slider = document.getElementById("myRange");
+const output = document.getElementById("output");
+output.innerHTML = ((slider.value) + "x" + (slider.value));//displays current value
 
+//updates output value
+slider.oninput = function() {
+    output.innerHTML = this.value + "x" + this.value;
+    gridSide= this.value; 
+    container.setAttribute('style','grid-template-columns: repeat('+gridSide+', 1fr);') ;
+    noOfGrids = gridSide*gridSide;
+    deleteGrid(); 
+    gridCreator(noOfGrids);
+    paintGrid();
+  } 
 
+  const colorPicker = document.getElementById("colorP");
+  colorPicker.oninput = function() {
+    allGrids.forEach((grids) => {grids.addEventListener('mouseover',()=> {grids.classList.add('grid-transformed');grids.style.backgroundColor = this.value;})}); 
+    const transformedGrids= container.querySelectorAll('.grid-transformed');
+    transformedGrids.forEach((tgrid) => {tgrid.setAttribute('style','background-color:'+this.value+';')});
+      
+
+  }
+
+  
+
+  //deletes grid
+  function deleteGrid() {
+  let oldGrid = container.querySelectorAll('.grid');
+    oldGrid.forEach(grid => {container.removeChild(grid)})
+
+}
 
