@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,34 +8,35 @@
     <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="style.css">
     <script src="javascript.js" defer></script>
-    
+
 </head>
+
 <body>
-    <header><h1 class = "header">Etch-A-Sketch</h1></header>
+    <header>
+        <h1 class="header">Etch-A-Sketch</h1>
+    </header>
     <div class="ui">
         <div class="buttons-container">
             <button class="button" id="color-mode">COLOR MODE</button>
             <button class="button" id="rainbow-mode">RAINBOW MODE</button>
-            <button class="button"id="eraser">ERASER</button>
-            <button class="button"id="clear">CLEAR</button>
+            <button class="button" id="opacity-mode">OPACITY MODE</button>
+            <button class="button" id="eraser">ERASER</button>
+            <button class="button" id="clear">CLEAR</button>
         </div>
         <div class="grid-container" id="gridContainer"></div>
-      <div class="color-picker-container">
-        <input type="color" autocomplete="off" value="#000000"class="color-picker" id="colorP"></input>
-
-
-          
-          </div>
-    
+        <div class="color-picker-container">
+            <input type="color" autocomplete="off" value="#000000" class="color-picker" id="colorP"></input>
+        </div>
     </div>
 
     <div class="slider-big-container">
         <h2 class="grid-size" id="output">16x16</h2>
-    <div class="slider-data"></div>
-    <div class="slidecontainer">
-        <input autocomplete="off" type="range" min="16" max="64" value="16" class="slider" id="myRange">
-      </div>
+        <div class="slider-data"></div>
+        <div class="slidecontainer">
+            <input autocomplete="off" type="range" min="16" max="64" value="16" class="slider" id="myRange">
+        </div>
     </div>
-      
+
 </body>
+
 </html>
