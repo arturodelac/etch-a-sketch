@@ -33,6 +33,16 @@ function paintGrid() {
     });
 }
 
+//click function
+allGrids.forEach((grids) => {
+    grids.addEventListener('click', () => {
+        grids.classList.remove('grid-transformed');
+        grids.style.backgroundColor = 'rgb(255,255,255)'
+
+    })
+});
+
+
 //color mode button
 const colorButton = document.querySelector('#color-mode');
 colorButton.addEventListener('click', () => { paintGrid() });
@@ -68,6 +78,8 @@ function rainbow() {
     });
 }
 
+
+
 //eraser button
 const eraserButton = document.querySelector('#eraser');
 eraserButton.addEventListener('click', () => { eraser() });
@@ -78,7 +90,7 @@ function eraser() {
     allGrids.forEach((grids) => {
         grids.addEventListener('mouseover', () => {
             grids.classList.remove('grid-transformed');
-            grids.style.backgroundColor = 'white'
+            grids.style.backgroundColor = 'rgb(255,255,255)'
         })
     });
 }
@@ -138,69 +150,53 @@ function addShade() {
     clear();
     allGrids.forEach((grids) => {
         let bgColor = window.getComputedStyle(grids).getPropertyValue('background-color');
+        console.log(bgColor);
         grids.addEventListener('mouseover', () => {
-
-            console.log(bgColor);
-
-            if (bgColor = 'rgb(255,255,255') {
-                grids.setAttribute('style', 'background-color:rgb(225,225,225);');
-                grids.addEventListener('mouseover', () => {
-                    bgColor = window.getComputedStyle(grids).getPropertyValue('background-color');
-                    if (bgColor = 'rgb(225,225,225)') {
-                        grids.setAttribute('style', 'background-color:rgb(200,200,200);');
-                        grids.addEventListener('mouseover', () => {
-                            bgColor = window.getComputedStyle(grids).getPropertyValue('background-color');
-                            if (bgColor = 'rgb(200,200,200)') {
-                                grids.setAttribute('style', 'background-color:rgb(175,175,175);');
-                                grids.addEventListener('mouseover', () => {
-                                    bgColor = window.getComputedStyle(grids).getPropertyValue('background-color');
-                                    if (bgColor = 'rgb(175,175,175)') {
-                                        grids.setAttribute('style', 'background-color:rgb(150,150,150);');
-                                        grids.addEventListener('mouseover', () => {
-                                            bgColor = window.getComputedStyle(grids).getPropertyValue('background-color');
-                                            if (bgColor = 'rgb(150,150,150)') {
-                                                grids.setAttribute('style', 'background-color:rgb(125,125,125);');
-                                                grids.addEventListener('mouseover', () => {
-                                                    bgColor = window.getComputedStyle(grids).getPropertyValue('background-color');
-                                                    if (bgColor = 'rgb(125,125,125)') {
-                                                        grids.setAttribute('style', 'background-color:rgb(100,100,100);');
-                                                        grids.addEventListener('mouseover', () => {
-                                                            bgColor = window.getComputedStyle(grids).getPropertyValue('background-color');
-                                                            if (bgColor = 'rgb(100,100,100)') {
-                                                                grids.setAttribute('style', 'background-color:rgb(75,75,75);');
-                                                                grids.addEventListener('mouseover', () => {
-                                                                    bgColor = window.getComputedStyle(grids).getPropertyValue('background-color');
-                                                                    if (bgColor = 'rgb(75,75,75)') {
-                                                                        grids.setAttribute('style', 'background-color:rgb(50,50,50);');
-                                                                        grids.addEventListener('mouseover', () => {
-                                                                            bgColor = window.getComputedStyle(grids).getPropertyValue('background-color');
-                                                                            if (bgColor = 'rgb(25,25,25)') {
-                                                                                grids.setAttribute('style', 'background-color:rgb(00,00,00);');
-                                                                            }
-                                                                        })
-                                                                    }
-                                                                })
-                                                            }
-                                                        })
-                                                    }
-                                                })
-                                            }
-                                        })
-                                    }
-                                })
-
-
-                            }
-
-                        })
-                    }
-                });
-
-
-
-
+            switch (bgColor) {
+                case 'rgb(0, 0, 0)':
+                    console.log(bgColor);
+                    grids.setAttribute('style', 'background-color:rgb(0,0,0);');
+                    break;
+                case 'rgb(25, 25, 25)':
+                    grids.setAttribute('style', 'background-color:rgb(25,25,25);');
+                    break;
+                case 'rgb(50, 50, 50)':
+                    grids.setAttribute('style', 'background-color:rgb(25,25,25);');
+                    break;
+                case 'rgb(75, 75, 75)':
+                    grids.setAttribute('style', 'background-color:rgb(50,50,50);');
+                    break;
+                case 'rgb(100, 100, 100)':
+                    grids.setAttribute('style', 'background-color:rgb(75,75,75);');
+                    break;
+                case 'rgb(125, 125, 125)':
+                    grids.setAttribute('style', 'background-color:rgb(100,100,100);');
+                    break;
+                case 'rgb(150, 150, 150)':
+                    grids.setAttribute('style', 'background-color:rgb(125,125,125);');
+                    break;
+                case 'rgb(175, 175, 175)':
+                    grids.setAttribute('style', 'background-color:rgb(150,150,150);');
+                    break;
+                case 'rgb(200, 200, 200)':
+                    grids.setAttribute('style', 'background-color:rgb(175,175,175);');
+                    break;
+                case 'rgb(225, 225, 225)':
+                    console.log(bgColor);
+                    grids.setAttribute('style', 'background-color:rgb(200,200,200);');
+                    break;
+                case 'rgb(255, 255, 255)':
+                    console.log(bgColor);
+                    grids.setAttribute('style', 'background-color:rgb(225,225,225);');
+                    break;
+                default:
+                    grids.setAttribute('style', 'background-color:rgb(225,225,225);');
+                    break;
             }
 
+            bgColor = window.getComputedStyle(grids).getPropertyValue('background-color');
+
         })
+
     })
-};
+}
