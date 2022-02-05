@@ -24,8 +24,6 @@ function gridCreator(noOfGrids) {
 function paintGrid() {
     allGrids = container.querySelectorAll('.grid');
     allGrids.forEach((grids) => {
-        grids.style.backgroundColor = 'white';
-        grids.classList.remove('grid-transformed');
         grids.addEventListener('mouseover', () => {
             grids.classList.add('grid-transformed');
             grids.style.backgroundColor = 'rgb(0,0,0)'
@@ -68,8 +66,6 @@ rainbowButton.addEventListener('click', () => { rainbow() });
 //rainbow mode function
 function rainbow() {
     allGrids.forEach((grids) => {
-        grids.classList.remove('grid-transformed');
-        grids.style.backgroundColor = 'white';
         grids.addEventListener('mouseover', () => {
             grids.classList.add('grid-transformed');
             const rainbowColor = color();
@@ -147,7 +143,7 @@ opacityButton.addEventListener('click', () => { addShade() });
 
 //opacity function
 function addShade() {
-    clear();
+    //clear();
     allGrids.forEach((grids) => {
         let bgColor = window.getComputedStyle(grids).getPropertyValue('background-color');
         console.log(bgColor);
