@@ -1,6 +1,7 @@
 # Etch-a-sketch
 Etch-A-Sketch Project idea from The Odin Project
 
+\https://arturodelac.github.io/etch-a-sketch/
 
 This website allows you to paint in a canvas using your mouse.
 The resolution of the canvas is decided by the user with the use of a slider at the bottom of the website.
