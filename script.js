@@ -69,37 +69,43 @@ function buttonRainbow() {
 function buttonSteps() {
     buttonClickNoDrawing();
     grids.forEach(grid => {
-        grid.style.background = '#27211b';
-        grid.style.opacity = '0%';
+        grid.style.background = "rgba(39, 33, 27,0)";
     })
     grids = document.querySelectorAll('.grid');
     grids.forEach(grid => {
         grid.addEventListener('mouseenter', (e) => {
-            currentColor = grid.style.opacity;
+            currentColor = grid.style.background;
             switch (currentColor) {
-                case "0":
-                    grid.style.opacity = "0.1";
+                case "rgba(39, 33, 27, 0)":
+                    grid.style.background = "rgba(39, 33, 27, 0.1)";
+                    console.log('h')
                     break;
-                case "0.1":
-                    grid.style.opacity = "0.2";
+                case "rgba(39, 33, 27, 0.1)":
+                    grid.style.background = "rgba(39, 33, 27, 0.2)";
                     break;
-                case "0.2":
-                    grid.style.opacity = "0.3";
+                case "rgba(39, 33, 27, 0.2)":
+                    grid.style.background = "rgba(39, 33, 27, 0.3)";
                     break;
-                case "0.3":
-                    grid.style.opacity = "0.4";
+                case "rgba(39, 33, 27, 0.3)":
+                    grid.style.background = "rgba(39, 33, 27, 0.4)";
                     break;
-                case "0.4":
-                    grid.style.opacity = "0.5";
+                case "rgba(39, 33, 27, 0.4)":
+                    grid.style.background = "rgba(39, 33, 27, 0.5)";
                     break;
-                case "0.5":
-                    grid.style.opacity = "0.6";
+                case "rgba(39, 33, 27, 0.5)":
+                    grid.style.background = "rgba(39, 33, 27, 0.6)";
                     break;
-                case "0.6":
-                    grid.style.opacity = "0.7";
+                case "rgba(39, 33, 27, 0.6)":
+                    grid.style.background = "rgba(39, 33, 27, 0.7)";
                     break;
-                case "0.7":
-                    grid.style.opacity = "0.8";
+                case "rgba(39, 33, 27, 0.7)":
+                    grid.style.background = "rgba(39, 33, 27, 0.8)";
+                    break;
+                case "rgba(39, 33, 27, 0.8)":
+                    grid.style.background = "rgba(39, 33, 27, 0.9)";
+                    break;
+                case "rgba(39, 33, 27, 0.9)":
+                    grid.style.background = "rgba(39, 33, 27, 1)";
                     break;
 
             }
